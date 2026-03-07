@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-import Navbar from "../../../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
