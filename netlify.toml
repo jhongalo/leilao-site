@@ -4,3 +4,8 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/imoveis/:codigo"
+  to = "/imoveis/:codigo"
+  status = 200
