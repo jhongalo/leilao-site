@@ -21,14 +21,19 @@ export default function ImovelPage() {
   const [imovel, setImovel] = useState(null);
   const [similares, setSimilares] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [erro, setErro] = useState(null);
+
+  const [erro, setErro] = useState(null);
 
   useEffect(() => {
     async function carregar() {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("imoveis")
         .select("*")
         .eq("codigo_caixa", codigo)
         .single();
+
+      if (error) setErro(JSON.stringify(error));
 
       if (data) {
         setImovel(data);
@@ -57,9 +62,11 @@ export default function ImovelPage() {
   if (!imovel) return (
     <>
       <Navbar />
-      <main style={{paddingTop:"64px",minHeight:"100vh",background:"#0a0a0f",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:"16px"}}>
+      <main style={{paddingTop:"64px",minHeight:"100vh",background:"#0a0a0f",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:"16px",padding:"32px"}}>
         <div style={{fontSize:"48px"}}>😕</div>
         <div style={{color:"white",fontSize:"18px"}}>Imóvel não encontrado</div>
+        <div style={{color:"#6b6b80",fontSize:"12px"}}>Código: {codigo}</div>
+        {erro && <div style={{color:"#f87171",fontSize:"11px",maxWidth:"600px",wordBreak:"break-all",textAlign:"center"}}>Erro: {erro}</div>}
         <Link href="/imoveis" style={{color:"#f97316",textDecoration:"none"}}>← Voltar à lista</Link>
       </main>
     </>
