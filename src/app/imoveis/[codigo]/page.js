@@ -31,12 +31,12 @@ export default function ImovelPage() {
         .from("imoveis")
         .select("*")
         .eq("codigo_caixa", codigo)
-        .single();
+        .limit(1);
 
       if (error) setErro(JSON.stringify(error));
 
-      if (data) {
-        setImovel(data);
+      if (data && data.length > 0) {
+        setImovel(data[0]);
         const { data: sim } = await supabase
           .from("imoveis")
           .select("*")
