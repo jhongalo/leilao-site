@@ -23,8 +23,6 @@ export default function ImovelPage() {
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(null);
 
-  const [erro, setErro] = useState(null);
-
   useEffect(() => {
     async function carregar() {
       const { data, error } = await supabase
