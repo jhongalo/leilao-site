@@ -9,3 +9,8 @@
   from = "/imoveis/:codigo"
   to = "/imoveis/:codigo"
   status = 200
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug"
+  status = 200
