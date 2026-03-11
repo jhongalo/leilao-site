@@ -26,7 +26,7 @@ export default async function BlogPostPage({ params }) {
       <section className="bg-blue-900 text-white py-14 px-4">
         <div className="max-w-3xl mx-auto">
           <Link href="/blog" className="text-blue-300 hover:text-white text-sm mb-6 inline-block">
-            Voltar ao Blog
+            ← Voltar ao Blog
           </Link>
           <span className="bg-blue-700 text-blue-100 text-xs px-3 py-1 rounded-full mb-4 block w-fit">{post.category}</span>
           <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
