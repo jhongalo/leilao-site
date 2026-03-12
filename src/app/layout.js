@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://clever-raindrop-8346f0.netlify.app",
+    url: "https://leilao-site.vercel.app",
     siteName: "LeilãoFácil",
     title: "LeilãoFácil — Imóveis de Leilão com os Melhores Descontos",
     description: "Encontre imóveis de leilão da Caixa Econômica Federal em todo o Brasil. Descontos de até 90%.",
